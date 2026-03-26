@@ -1,0 +1,152 @@
+/* ============================================================
+   Hero Section — Stiner Thrifting
+   Warm vintage background, shop name, tagline, CTA, owner photos
+   ============================================================ */
+
+/* Hero section wrapper */
+#home {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(
+      ellipse at 20% 50%,
+      rgba(200, 134, 10, 0.12) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 20%,
+      rgba(139, 69, 19, 0.1) 0%,
+      transparent 55%
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(212, 184, 150, 0.08) 40px,
+      rgba(212, 184, 150, 0.08) 41px
+    );
+  border-bottom: 2px solid var(--color-border);
+}
+
+/* ============================================================
+   Hero Content
+   ============================================================ */
+.hero__content {
+  text-align: center;
+  padding-block: var(--space-16) var(--space-12);
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.hero__title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.01em;
+  text-shadow: 0 2px 4px rgba(46, 26, 14, 0.1);
+}
+
+.hero__tagline {
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-8);
+  line-height: 1.5;
+}
+
+.hero__cta {
+  font-size: var(--text-lg);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  letter-spacing: 0.02em;
+}
+
+.hero__cta:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+  transition:
+    box-shadow var(--transition),
+    transform var(--transition);
+}
+
+/* ============================================================
+   Owner Section
+   ============================================================ */
+.owner-section {
+  padding-block: var(--space-12) var(--space-8);
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.owner-section__heading {
+  font-size: var(--text-3xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-8);
+}
+
+.owner-section__photos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Owner Photo Figures
+   ============================================================ */
+.owner-photo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.owner-photo__img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-accent);
+  box-shadow: var(--shadow-md);
+  background-color: var(--color-border);
+  /* Fallback texture when image is missing */
+  background-image: linear-gradient(
+    135deg,
+    var(--color-surface) 0%,
+    var(--color-border) 100%
+  );
+}
+
+.owner-photo__caption {
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 480px) {
+  .hero__content {
+    padding-block: var(--space-12) var(--space-8);
+  }
+
+  .hero__tagline {
+    font-size: var(--text-base);
+  }
+
+  .owner-section__photos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .owner-photo__img {
+    width: 180px;
+    height: 180px;
+  }
+}

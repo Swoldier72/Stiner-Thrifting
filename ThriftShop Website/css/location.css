@@ -1,0 +1,109 @@
+/* ============================================================
+   Location Section — Stiner Thrifting
+   ============================================================ */
+
+#location {
+  background-color: var(--color-surface);
+}
+
+.location-content {
+  display: flex;
+  justify-content: center;
+}
+
+.location-info {
+  width: 100%;
+  max-width: 560px;
+}
+
+/* Sub-headings (Address, Hours, Contact) */
+.location-info h3 {
+  font-size: var(--text-xl);
+  color: var(--color-primary-dark);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-2);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.location-info h3:first-child {
+  margin-top: 0;
+}
+
+/* Address */
+.location-address {
+  font-style: normal;
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+}
+
+/* Map link button */
+.location-map-link {
+  margin-bottom: var(--space-6);
+}
+
+/* Hours list — two-column layout */
+.location-hours {
+  list-style: none;
+  margin-bottom: var(--space-4);
+}
+
+.location-hours li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-4);
+  padding-block: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+.location-hours li:last-child {
+  border-bottom: none;
+}
+
+/* Day label (left column) */
+.location-hours li span:first-child {
+  font-weight: 600;
+  color: var(--color-primary-dark);
+  flex-shrink: 0;
+}
+
+/* Time value (right column) */
+.location-hours li span:last-child {
+  color: var(--color-text-muted);
+  text-align: right;
+}
+
+/* Contact */
+.location-contact {
+  font-size: var(--text-base);
+  line-height: 2;
+  margin-bottom: 0;
+}
+
+.location-contact a {
+  color: var(--color-primary);
+  transition: color var(--transition);
+}
+
+.location-contact a:hover {
+  color: var(--color-accent);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 480px) {
+  .location-hours li {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+
+  .location-hours li span:last-child {
+    text-align: left;
+  }
+}

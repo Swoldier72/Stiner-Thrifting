@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg-grad-008" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c8d8e8"/>
+      <stop offset="100%" stop-color="#7090a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-grad-008)"/>
+  <!-- Stars in background -->
+  <circle cx="140" cy="90" r="2" fill="white" opacity="0.8"/>
+  <circle cx="260" cy="75" r="1.5" fill="white" opacity="0.8"/>
+  <circle cx="310" cy="110" r="2" fill="white" opacity="0.6"/>
+  <circle cx="100" cy="130" r="1.5" fill="white" opacity="0.7"/>
+  <circle cx="330" cy="85" r="1" fill="white" opacity="0.9"/>
+  <circle cx="155" cy="65" r="1" fill="white" opacity="0.7"/>
+  <!-- Lunchbox body -->
+  <rect x="120" y="130" width="160" height="110" rx="8" fill="#b0b8c0"/>
+  <!-- Metallic sheen -->
+  <rect x="120" y="130" width="160" height="30" rx="8" fill="#c8d0d8"/>
+  <rect x="120" y="148" width="160" height="12" fill="#c8d0d8"/>
+  <!-- Space scene on lunchbox -->
+  <rect x="128" y="138" width="144" height="94" rx="4" fill="#0a0a2e"/>
+  <!-- Planet -->
+  <circle cx="200" cy="185" r="28" fill="#4a6fa5"/>
+  <ellipse cx="200" cy="185" rx="42" ry="10" fill="none" stroke="#8ab0d0" stroke-width="4" opacity="0.7"/>
+  <!-- Planet surface detail -->
+  <path d="M178,175 Q190,170 205,178 Q215,183 225,178" stroke="#6a8fc5" stroke-width="2" fill="none"/>
+  <!-- Rocket -->
+  <polygon points="240,148 248,175 232,175" fill="#e8e0c0"/>
+  <rect x="232" y="168" width="16" height="10" fill="#c0b890"/>
+  <polygon points="232,178 228,188 236,178" fill="#e74c3c"/>
+  <polygon points="248,178 252,188 244,178" fill="#e74c3c"/>
+  <!-- Rocket window -->
+  <circle cx="240" cy="160" r="4" fill="#7ec8e3"/>
+  <!-- Stars on scene -->
+  <circle cx="135" cy="148" r="1.5" fill="white"/>
+  <circle cx="260" cy="155" r="1.5" fill="white"/>
+  <circle cx="145" cy="220" r="1" fill="white"/>
+  <circle cx="255" cy="225" r="1" fill="white"/>
+  <!-- Latch -->
+  <rect x="188" y="127" width="24" height="8" rx="3" fill="#888"/>
+  <!-- Handle -->
+  <path d="M170,130 Q200,115 230,130" stroke="#999" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Label -->
+  <rect x="110" y="252" width="180" height="30" rx="4" fill="rgba(0,0,0,0.35)"/>
+  <text x="200" y="272" font-family="sans-serif" font-size="13" fill="#e8f0f8" text-anchor="middle" font-weight="bold">Vintage Tin Lunchbox</text>
+</svg>

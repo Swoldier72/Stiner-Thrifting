@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg-grad-003" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d5b0"/>
+      <stop offset="100%" stop-color="#c4a06a"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-grad-003)"/>
+  <!-- Table top -->
+  <ellipse cx="200" cy="120" rx="90" ry="18" fill="#8b5e3c"/>
+  <ellipse cx="200" cy="115" rx="90" ry="18" fill="#a0714f"/>
+  <!-- Table leg -->
+  <rect x="188" y="133" width="24" height="110" rx="4" fill="#7a4f2e"/>
+  <!-- Leg taper effect -->
+  <polygon points="188,133 212,133 206,243 194,243" fill="#7a4f2e"/>
+  <!-- Tapered feet -->
+  <ellipse cx="200" cy="243" rx="20" ry="6" fill="#5c3820"/>
+  <!-- Wood grain lines on top -->
+  <ellipse cx="200" cy="115" rx="70" ry="12" fill="none" stroke="#8b5e3c" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="200" cy="115" rx="50" ry="8" fill="none" stroke="#8b5e3c" stroke-width="1" opacity="0.4"/>
+  <!-- Label -->
+  <rect x="110" y="258" width="180" height="30" rx="4" fill="rgba(0,0,0,0.3)"/>
+  <text x="200" y="278" font-family="sans-serif" font-size="13" fill="#f5e6d3" text-anchor="middle" font-weight="bold">Mid-Century Side Table</text>
+</svg>

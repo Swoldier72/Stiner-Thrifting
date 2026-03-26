@@ -1,0 +1,156 @@
+/* ============================================================
+   angiebc.css — Angie B Designs branding overrides
+   Overrides CSS variables on .angiebc-page for a distinct
+   teal/sage green palette while staying complementary to the
+   main warm vintage theme.
+   ============================================================ */
+
+/* ============================================================
+   Variable Overrides — scoped to .angiebc-page
+   ============================================================ */
+.angiebc-page {
+  --color-primary: #3d7a6e; /* teal */
+  --color-primary-dark: #265c52; /* deep teal */
+  --color-accent: #6aab9c; /* sage green */
+  --color-accent-light: #a8d5cc; /* light mint */
+  --color-text-muted: #4a6e68; /* muted teal-grey */
+  --color-border: #b2d4ce; /* soft teal border */
+  --color-surface: #eef6f4; /* pale mint surface */
+  --color-bg: #f5fbfa; /* near-white with green tint */
+}
+
+/* ============================================================
+   Angie B Designs Hero / Bio Section
+   ============================================================ */
+.angiebc-hero {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-dark) 0%,
+    var(--color-primary) 60%,
+    var(--color-accent) 100%
+  );
+  padding-block: var(--space-24);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle decorative circle in the background */
+.angiebc-hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  pointer-events: none;
+}
+
+.angiebc-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+}
+
+.angiebc-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  color: #ffffff;
+  margin-bottom: var(--space-6);
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+/* Decorative underline accent */
+.angiebc-hero__title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  background-color: var(--color-accent-light);
+  margin: var(--space-4) auto 0;
+  border-radius: 2px;
+}
+
+.angiebc-bio {
+  max-width: 640px;
+  margin-inline: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.angiebc-bio p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-lg);
+  line-height: 1.75;
+  margin-bottom: var(--space-4);
+}
+
+.angiebc-bio p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   In-Stock Items Section
+   ============================================================ */
+#angiebc-shop {
+  background-color: var(--color-bg);
+}
+
+/* ============================================================
+   Custom Request Section
+   ============================================================ */
+#angiebc-request {
+  background-color: var(--color-surface);
+}
+
+/* ============================================================
+   Button overrides — use teal palette
+   ============================================================ */
+.angiebc-page .btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.angiebc-page .btn-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   Form focus ring — teal instead of brown
+   ============================================================ */
+.angiebc-page .form-input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(61, 122, 110, 0.18);
+}
+
+/* ============================================================
+   Confirmation border — use accent instead of gold
+   ============================================================ */
+.angiebc-page .form-confirmation {
+  border-color: var(--color-accent);
+}
+
+/* ============================================================
+   Nav active link — teal underline
+   ============================================================ */
+.angiebc-page .nav__link--active {
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   Footer — teal palette override
+   ============================================================ */
+.angiebc-page .site-footer {
+  background-color: var(--color-primary-dark);
+}

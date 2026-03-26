@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#c8a882"/>
+  <rect width="400" height="300" fill="url(#bg-grad-001)"/>
+  <defs>
+    <linearGradient id="bg-grad-001" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d4b896"/>
+      <stop offset="100%" stop-color="#a0714f"/>
+    </linearGradient>
+  </defs>
+  <!-- Jacket body -->
+  <rect x="130" y="110" width="140" height="120" rx="6" fill="#7a4f2e"/>
+  <!-- Collar left -->
+  <polygon points="170,110 200,140 200,110" fill="#5c3820"/>
+  <!-- Collar right -->
+  <polygon points="230,110 200,140 200,110" fill="#5c3820"/>
+  <!-- Left sleeve -->
+  <rect x="80" y="115" width="55" height="70" rx="8" fill="#7a4f2e"/>
+  <!-- Right sleeve -->
+  <rect x="265" y="115" width="55" height="70" rx="8" fill="#7a4f2e"/>
+  <!-- Button placket -->
+  <rect x="196" y="140" width="8" height="90" fill="#5c3820"/>
+  <!-- Buttons -->
+  <circle cx="200" cy="155" r="4" fill="#c8a882"/>
+  <circle cx="200" cy="175" r="4" fill="#c8a882"/>
+  <circle cx="200" cy="195" r="4" fill="#c8a882"/>
+  <!-- Pocket left -->
+  <rect x="145" y="175" width="35" height="28" rx="3" fill="#5c3820"/>
+  <!-- Pocket right -->
+  <rect x="220" y="175" width="35" height="28" rx="3" fill="#5c3820"/>
+  <!-- Label -->
+  <rect x="120" y="255" width="160" height="30" rx="4" fill="rgba(0,0,0,0.35)"/>
+  <text x="200" y="275" font-family="sans-serif" font-size="13" fill="#f5e6d3" text-anchor="middle" font-weight="bold">Denim Jacket</text>
+</svg>

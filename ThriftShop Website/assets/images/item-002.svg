@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg-grad-002" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f9d6e8"/>
+      <stop offset="100%" stop-color="#e8a0c0"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg-grad-002)"/>
+  <!-- Dress bodice -->
+  <path d="M160,80 Q200,70 240,80 L250,160 Q200,170 150,160 Z" fill="#e05a8a"/>
+  <!-- Straps -->
+  <rect x="172" y="70" width="14" height="30" rx="4" fill="#c0406a"/>
+  <rect x="214" y="70" width="14" height="30" rx="4" fill="#c0406a"/>
+  <!-- Dress skirt -->
+  <path d="M150,158 Q120,200 110,270 L290,270 Q280,200 250,158 Q200,170 150,158 Z" fill="#e87aaa"/>
+  <!-- Floral details -->
+  <circle cx="185" cy="120" r="8" fill="#fff0f5"/>
+  <circle cx="185" cy="120" r="4" fill="#ffb3d1"/>
+  <circle cx="215" cy="135" r="7" fill="#fff0f5"/>
+  <circle cx="215" cy="135" r="3.5" fill="#ffb3d1"/>
+  <circle cx="195" cy="148" r="6" fill="#fff0f5"/>
+  <circle cx="195" cy="148" r="3" fill="#ffb3d1"/>
+  <!-- Skirt flowers -->
+  <circle cx="165" cy="210" r="9" fill="#fff0f5" opacity="0.7"/>
+  <circle cx="165" cy="210" r="4.5" fill="#e05a8a" opacity="0.7"/>
+  <circle cx="220" cy="225" r="8" fill="#fff0f5" opacity="0.7"/>
+  <circle cx="220" cy="225" r="4" fill="#e05a8a" opacity="0.7"/>
+  <circle cx="245" cy="200" r="7" fill="#fff0f5" opacity="0.7"/>
+  <circle cx="245" cy="200" r="3.5" fill="#e05a8a" opacity="0.7"/>
+  <!-- Label -->
+  <rect x="120" y="255" width="160" height="30" rx="4" fill="rgba(0,0,0,0.25)"/>
+  <text x="200" y="275" font-family="sans-serif" font-size="13" fill="#fff0f5" text-anchor="middle" font-weight="bold">Floral Sundress</text>
+</svg>

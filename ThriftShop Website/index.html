@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stiner Thrifting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/inventory.css" />
+    <link rel="stylesheet" href="css/forms.css" />
+    <link rel="stylesheet" href="css/location.css" />
+    <link rel="stylesheet" href="css/cart.css" />
+  </head>
+  <body>
+    <!-- ===== Navigation ===== -->
+    <nav id="main-nav" aria-label="Main navigation">
+      <div class="nav__inner container">
+        <a href="#home" class="nav__logo">Stiner Thrifting</a>
+
+        <button
+          class="nav__hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <img
+            src="assets/icons/hamburger.svg"
+            alt=""
+            aria-hidden="true"
+            class="nav__hamburger-icon nav__hamburger-icon--open"
+          />
+          <img
+            src="assets/icons/close.svg"
+            alt=""
+            aria-hidden="true"
+            class="nav__hamburger-icon nav__hamburger-icon--close"
+          />
+        </button>
+
+        <ul id="nav-links" class="nav__links" role="list">
+          <li><a href="#home" class="nav__link">Home</a></li>
+          <li><a href="#shop" class="nav__link">Shop</a></li>
+          <li><a href="#sell" class="nav__link">Sell an Item</a></li>
+          <li><a href="angiebc.html" class="nav__link">Angie B Designs</a></li>
+          <li><a href="#location" class="nav__link">Location</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main>
+      <!-- ===== Home / Hero Section ===== -->
+      <section id="home" aria-labelledby="hero-heading">
+        <div class="container">
+          <div class="hero__content">
+            <h1 id="hero-heading" class="hero__title">Stiner Thrifting</h1>
+            <p class="hero__tagline">
+              Unique finds, affordable prices — your neighborhood thrift shop.
+            </p>
+            <a href="#shop" class="btn btn-primary hero__cta"
+              >Browse the Shop</a
+            >
+          </div>
+
+          <!-- Meet the Owner -->
+          <div class="owner-section">
+            <h2 class="owner-section__heading">Meet the Owner</h2>
+            <div class="owner-section__photos">
+              <figure class="owner-photo">
+                <img
+                  src="assets/images/owner-1.svg"
+                  alt="Shop owner smiling in front of the store"
+                  class="owner-photo__img"
+                />
+                <figcaption class="owner-photo__caption">
+                  At the shop
+                </figcaption>
+              </figure>
+              <figure class="owner-photo">
+                <img
+                  src="assets/images/owner-2.svg"
+                  alt="Shop owner arranging items on display"
+                  class="owner-photo__img"
+                />
+                <figcaption class="owner-photo__caption">
+                  Curating finds
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Shop / Inventory Section ===== -->
+      <section id="shop" aria-labelledby="shop-heading">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="shop-heading">Current Inventory</h2>
+            <p>Browse our latest thrift finds — updated regularly.</p>
+          </div>
+
+          <!-- Category Filters -->
+          <div
+            class="inventory-filters"
+            role="group"
+            aria-label="Filter by category"
+          >
+            <button class="filter-btn filter-btn--active" data-category="All">
+              All
+            </button>
+            <button class="filter-btn" data-category="Clothing">
+              Clothing
+            </button>
+            <button class="filter-btn" data-category="Furniture">
+              Furniture
+            </button>
+            <button class="filter-btn" data-category="Electronics">
+              Electronics
+            </button>
+            <button class="filter-btn" data-category="Other">Other</button>
+          </div>
+
+          <!-- Item Grid -->
+          <div
+            id="inventory-grid"
+            class="inventory-grid"
+            data-active-category="All"
+            aria-live="polite"
+          >
+            <!-- Item cards rendered by inventory.js -->
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Item Detail Modal ===== -->
+      <dialog
+        id="item-modal"
+        aria-labelledby="modal-item-name"
+        aria-modal="true"
+      >
+        <div class="modal__inner">
+          <button class="modal__close" aria-label="Close item details">
+            &times;
+          </button>
+          <img id="modal-item-image" src="" alt="" class="modal__image" />
+          <div class="modal__body">
+            <h3 id="modal-item-name" class="modal__name"></h3>
+            <p class="modal__price"></p>
+            <p class="modal__description"></p>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- ===== Sell an Item Section ===== -->
+      <section id="sell" aria-labelledby="sell-heading">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="sell-heading">Sell an Item</h2>
+            <p>
+              Have something to sell? Fill out the form below and we'll be in
+              touch.
+            </p>
+          </div>
+
+          <form id="sell-form" class="sell-form" novalidate>
+            <!-- Image Upload -->
+            <div class="form-group">
+              <label for="sell-image" class="form-label"
+                >Item Photo <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="file"
+                id="sell-image"
+                name="imageFile"
+                accept="image/jpeg,image/png,image/webp"
+                class="form-input"
+              />
+              <span
+                class="field-error"
+                id="sell-image-error"
+                role="alert"
+              ></span>
+              <div
+                id="sell-image-preview"
+                class="image-preview"
+                aria-live="polite"
+              ></div>
+            </div>
+
+            <!-- Item Name -->
+            <div class="form-group">
+              <label for="sell-item-name" class="form-label"
+                >Item Name <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="sell-item-name"
+                name="itemName"
+                class="form-input"
+                placeholder="e.g. Vintage lamp"
+              />
+              <span
+                class="field-error"
+                id="sell-item-name-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <!-- Item Description -->
+            <div class="form-group">
+              <label for="sell-item-desc" class="form-label"
+                >Item Description <span aria-hidden="true">*</span></label
+              >
+              <textarea
+                id="sell-item-desc"
+                name="itemDescription"
+                class="form-input form-textarea"
+                rows="4"
+                placeholder="Describe the item's condition, size, etc."
+              ></textarea>
+              <span
+                class="field-error"
+                id="sell-item-desc-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <!-- Asking Price -->
+            <div class="form-group">
+              <label for="sell-price" class="form-label"
+                >Asking Price <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="sell-price"
+                name="askingPrice"
+                class="form-input"
+                placeholder="e.g. 15.00"
+              />
+              <span
+                class="field-error"
+                id="sell-price-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <!-- Seller Name -->
+            <div class="form-group">
+              <label for="sell-seller-name" class="form-label"
+                >Your Name <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="text"
+                id="sell-seller-name"
+                name="sellerName"
+                class="form-input"
+                placeholder="Full name"
+              />
+              <span
+                class="field-error"
+                id="sell-seller-name-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <!-- Seller Email -->
+            <div class="form-group">
+              <label for="sell-email" class="form-label"
+                >Email Address <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="email"
+                id="sell-email"
+                name="sellerEmail"
+                class="form-input"
+                placeholder="you@example.com"
+              />
+              <span
+                class="field-error"
+                id="sell-email-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <!-- Seller Phone -->
+            <div class="form-group">
+              <label for="sell-phone" class="form-label"
+                >Phone Number <span aria-hidden="true">*</span></label
+              >
+              <input
+                type="tel"
+                id="sell-phone"
+                name="sellerPhone"
+                class="form-input"
+                placeholder="(555) 555-5555"
+              />
+              <span
+                class="field-error"
+                id="sell-phone-error"
+                role="alert"
+              ></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Item</button>
+          </form>
+
+          <!-- Confirmation Message -->
+          <div
+            id="sell-confirmation"
+            class="form-confirmation"
+            hidden
+            aria-live="polite"
+          >
+            <h3>Thank you!</h3>
+            <p>We've received your submission and will be in touch soon.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Location Section ===== -->
+      <section id="location" aria-labelledby="location-heading">
+        <div class="container">
+          <div class="section-heading">
+            <h2 id="location-heading">Find Us</h2>
+          </div>
+          <div class="location-content">
+            <div class="location-info">
+              <h3>Address</h3>
+              <address class="location-address">
+                123 Main Street<br />
+                Anytown, ST 00000
+              </address>
+              <a
+                href="https://maps.google.com/?q=123+Main+Street+Anytown+ST+00000"
+                class="btn btn-outline location-map-link"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get Directions
+              </a>
+
+              <h3>Hours</h3>
+              <ul class="location-hours" aria-label="Business hours">
+                <li>
+                  <span>Monday – Friday</span><span>10:00 AM – 6:00 PM</span>
+                </li>
+                <li><span>Saturday</span><span>9:00 AM – 5:00 PM</span></li>
+                <li><span>Sunday</span><span>Closed</span></li>
+              </ul>
+
+              <h3>Contact</h3>
+              <p class="location-contact">
+                <a href="mailto:hello@stinerthrifting.com"
+                  >hello@stinerthrifting.com</a
+                ><br />
+                <a href="tel:+15555550100">(555) 555-0100</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          &copy; <span id="footer-year"></span> Stiner Thrifting. All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Data files -->
+    <script src="js/data/inventory-data.js"></script>
+
+    <!-- JS modules -->
+    <script src="js/nav.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/sell-form.js"></script>
+
+    <script>
+      document.getElementById("footer-year").textContent =
+        new Date().getFullYear();
+      initNav();
+      initCart();
+      renderInventory(INVENTORY_ITEMS);
+      initSellForm();
+    </script>
+  </body>
+</html>

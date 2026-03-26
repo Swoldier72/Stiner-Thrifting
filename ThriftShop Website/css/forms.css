@@ -1,0 +1,235 @@
+/* ============================================================
+   forms.css — Sell Form & Custom Request Form
+   Warm vintage look using CSS variables from main.css
+   ============================================================ */
+
+/* ============================================================
+   Sell Section Layout
+   ============================================================ */
+#sell {
+  background-color: var(--color-surface);
+}
+
+/* ============================================================
+   Form Container — max-width centered
+   ============================================================ */
+.sell-form {
+  max-width: 640px;
+  margin-inline: auto;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   Form Groups
+   ============================================================ */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+}
+
+.form-group:last-of-type {
+  margin-bottom: var(--space-8);
+}
+
+/* ============================================================
+   Labels
+   ============================================================ */
+.form-label {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+}
+
+.form-label span[aria-hidden="true"] {
+  color: var(--color-error);
+  margin-left: var(--space-1);
+}
+
+/* ============================================================
+   Inputs, Textareas, Selects
+   ============================================================ */
+.form-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition);
+  appearance: none;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.15);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* Textarea */
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Select */
+select.form-input {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238b4513' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-8);
+  cursor: pointer;
+}
+
+/* ============================================================
+   File Input
+   ============================================================ */
+input[type="file"].form-input {
+  padding: var(--space-2) var(--space-3);
+  background-color: var(--color-surface);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+input[type="file"].form-input::-webkit-file-upload-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: var(--space-3);
+  transition: background-color var(--transition);
+}
+
+input[type="file"].form-input::-webkit-file-upload-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+input[type="file"].form-input::file-selector-button {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: var(--space-3);
+  transition: background-color var(--transition);
+}
+
+input[type="file"].form-input::file-selector-button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ============================================================
+   Image Preview Area
+   ============================================================ */
+.image-preview {
+  margin-top: var(--space-3);
+  min-height: 0;
+}
+
+.image-preview img {
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface);
+}
+
+.image-preview p {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================================
+   Field Error Messages
+   ============================================================ */
+/* .field-error base styles are in main.css */
+/* Additional form-specific overrides: */
+.sell-form .field-error,
+.custom-request-form .field-error {
+  font-size: var(--text-sm);
+  color: var(--color-error);
+}
+
+.form-input.input-error {
+  border-color: var(--color-error);
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.1);
+}
+
+/* ============================================================
+   Confirmation Message
+   ============================================================ */
+.form-confirmation {
+  max-width: 640px;
+  margin-inline: auto;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.form-confirmation h3 {
+  font-family: var(--font-heading);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-3);
+}
+
+.form-confirmation p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  margin: 0;
+}
+
+/* ============================================================
+   Custom Request Form (angiebc.html)
+   ============================================================ */
+.custom-request-form {
+  max-width: 640px;
+  margin-inline: auto;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 480px) {
+  .sell-form,
+  .custom-request-form {
+    padding: var(--space-6) var(--space-4);
+  }
+}

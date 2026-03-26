@@ -1,0 +1,244 @@
+/* ============================================================
+   Inventory Section — Item Cards, Grid, Filters, Modal
+   ============================================================ */
+
+/* ----- Category Filter Buttons ----- */
+.inventory-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-8);
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-surface);
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.filter-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+.filter-btn--active {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-color: var(--color-primary);
+}
+
+/* ----- Inventory Grid ----- */
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Hide all cards when a specific category is active (not All) */
+.inventory-grid[data-active-category="Clothing"] .item-card,
+.inventory-grid[data-active-category="Furniture"] .item-card,
+.inventory-grid[data-active-category="Electronics"] .item-card,
+.inventory-grid[data-active-category="Other"] .item-card {
+  display: none;
+}
+
+/* Show only matching cards */
+.inventory-grid[data-active-category="Clothing"]
+  .item-card[data-category="Clothing"],
+.inventory-grid[data-active-category="Furniture"]
+  .item-card[data-category="Furniture"],
+.inventory-grid[data-active-category="Electronics"]
+  .item-card[data-category="Electronics"],
+.inventory-grid[data-active-category="Other"]
+  .item-card[data-category="Other"] {
+  display: flex;
+}
+
+/* ----- Item Card ----- */
+.item-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.item-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.item-card img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--color-border);
+}
+
+.item-card__body {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.item-card__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.item-card__price {
+  font-family: var(--font-accent);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.item-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+  flex: 1;
+}
+
+/* ----- Modal (native <dialog>) ----- */
+#item-modal {
+  border: none;
+  border-radius: var(--border-radius-lg);
+  padding: 0;
+  max-width: 560px;
+  width: calc(100% - var(--space-8));
+  box-shadow: var(--shadow-lg);
+  background-color: var(--color-bg);
+}
+
+#item-modal::backdrop {
+  background-color: rgba(46, 26, 14, 0.6);
+}
+
+.modal__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__close {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  font-size: var(--text-lg);
+  line-height: 1;
+  cursor: pointer;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition);
+  z-index: 1;
+}
+
+.modal__close:hover {
+  background-color: var(--color-border);
+}
+
+.modal__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--color-border);
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.modal__body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.modal__name {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-primary-dark);
+  margin: 0;
+}
+
+.modal__price {
+  font-family: var(--font-accent);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin: 0;
+}
+
+.modal__description {
+  font-size: var(--text-base);
+  color: var(--color-text);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ----- Responsive: single column at ≤480px ----- */
+@media (max-width: 480px) {
+  .inventory-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #item-modal {
+    width: calc(100% - var(--space-4));
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+}
+
+/* ----- Angie B Designs type filter ----- */
+.inventory-grid[data-active-type="Shirt"] .item-card,
+.inventory-grid[data-active-type="Rug"] .item-card,
+.inventory-grid[data-active-type="Mug"] .item-card,
+.inventory-grid[data-active-type="Tumbler"] .item-card,
+.inventory-grid[data-active-type="Bag"] .item-card {
+  display: none;
+}
+
+.inventory-grid[data-active-type="Shirt"] .item-card[data-type="Shirt"],
+.inventory-grid[data-active-type="Rug"] .item-card[data-type="Rug"],
+.inventory-grid[data-active-type="Mug"] .item-card[data-type="Mug"],
+.inventory-grid[data-active-type="Tumbler"] .item-card[data-type="Tumbler"],
+.inventory-grid[data-active-type="Bag"] .item-card[data-type="Bag"] {
+  display: flex;
+}
+
+/* ----- Add to Cart button inside item cards ----- */
+.item-card__add-btn {
+  margin-top: var(--space-3);
+  width: 100%;
+  font-size: var(--text-sm);
+  padding: var(--space-2) var(--space-4);
+}

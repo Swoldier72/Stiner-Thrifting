@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <linearGradient id="bg-owner1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c8a0"/>
+      <stop offset="100%" stop-color="#c49060"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="300" fill="url(#bg-owner1)"/>
+  <!-- Store shelf suggestion in background -->
+  <rect x="0" y="200" width="300" height="8" fill="rgba(0,0,0,0.15)"/>
+  <rect x="0" y="240" width="300" height="8" fill="rgba(0,0,0,0.1)"/>
+  <!-- Person silhouette -->
+  <!-- Head -->
+  <circle cx="150" cy="95" r="38" fill="#8b5e3c"/>
+  <!-- Hair -->
+  <ellipse cx="150" cy="72" rx="38" ry="20" fill="#4a2c10"/>
+  <ellipse cx="120" cy="88" rx="12" ry="22" fill="#4a2c10"/>
+  <ellipse cx="180" cy="88" rx="12" ry="22" fill="#4a2c10"/>
+  <!-- Face -->
+  <circle cx="150" cy="98" r="30" fill="#c49060"/>
+  <!-- Eyes -->
+  <ellipse cx="140" cy="92" rx="5" ry="6" fill="#4a2c10"/>
+  <ellipse cx="160" cy="92" rx="5" ry="6" fill="#4a2c10"/>
+  <circle cx="141" cy="91" r="2" fill="white"/>
+  <circle cx="161" cy="91" r="2" fill="white"/>
+  <!-- Smile -->
+  <path d="M138,108 Q150,118 162,108" stroke="#8b5e3c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <!-- Neck -->
+  <rect x="140" y="128" width="20" height="20" fill="#c49060"/>
+  <!-- Shoulders / body -->
+  <path d="M80,300 Q80,200 110,185 Q130,178 150,178 Q170,178 190,185 Q220,200 220,300 Z" fill="#a07040"/>
+  <!-- Shirt collar -->
+  <polygon points="140,185 150,200 160,185" fill="#f5e6d3"/>
+  <!-- Apron / store outfit hint -->
+  <rect x="120" y="200" width="60" height="80" rx="4" fill="#8b6030" opacity="0.5"/>
+  <!-- Label -->
+  <rect x="60" y="265" width="180" height="28" rx="4" fill="rgba(0,0,0,0.3)"/>
+  <text x="150" y="284" font-family="sans-serif" font-size="13" fill="#f5e6d3" text-anchor="middle" font-weight="bold">Shop Owner</text>
+</svg>
